@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container" id="loginForm">
+    <h2>📝 Student Login</h2>
+    <form id="form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="class">Class</label>
+      <select id="class" name="class" required>
+        <option value="">-- Select your class --</option>
+        <option value="Class 10">Class 10</option>
+        <option value="Class 11">Class 11</option>
+        <option value="Class 12">Class 12</option>
+        <option value="PUC 1">PUC 1</option>
+        <option value="PUC 2">PUC 2</option>
+      </select>
+
+      <label for="email">Email (optional)</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com">
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- This will be shown after "login" -->
+  <div class="welcome-message" id="welcomeMsg" style="display: none;">
+    <h2>🎉 Welcome!</h2>
+    <p>This is my new website started by <strong>Shivaramkrishna 🙏</strong></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('form');
+    const loginForm = document.getElementById('loginForm');
+    const welcomeMsg = document.getElementById('welcomeMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent page reload
+      loginForm.style.display = 'none';
+      welcomeMsg.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
